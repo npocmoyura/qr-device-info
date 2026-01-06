@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Надіслати дані пристрою</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Надіслати інформацію про пристрій</h2>
+<p>Один клік — без ручного вводу</p>
+
+<button onclick="sendData()">Надіслати</button>
+
+<script>
+function sendData() {
+  const ua = navigator.userAgent;
+  const lang = navigator.language;
+  const screenRes = screen.width + "x" + screen.height;
+
+  // ПОКИ ЩО заглушка — форму підставимо далі
+  const formUrl =
+    "https://docs.google.com/forms/d/e/FORM_ID/viewform" +
+    "?entry.111111=" + encodeURIComponent(ua) +
+    "&entry.222222=" + encodeURIComponent(lang) +
+    "&entry.333333=" + encodeURIComponent(screenRes);
+
+  window.location.href = formUrl;
+}
+</script>
+
+</body>
+</html>
