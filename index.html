@@ -28,20 +28,21 @@
 function sendData() {
   const ua = navigator.userAgent || "";
   const lang = navigator.language || "";
-  const screenRes = (screen?.width || 0) + "x" + (screen?.height || 0);
+  const screenRes = screen.width + "x" + screen.height;
 
   const base =
-    "https://docs.google.com/forms/d/e/1FAIpQLScK94gtAgsZdAe3iG3HkUzS1SoZWAWjzOyPQxd51Ajse-d47A/viewform?usp=pp_url";
+    "https://docs.google.com/forms/d/e/1FAIpQLScK94gtAgsZdAe3iG3HkUzS1SoZWAWjzOyPQxd51Ajse-d47A/viewform";
 
   const url =
     base +
-    "&entry.1312658030=" + encodeURIComponent(ua) +
+    "?entry.1312658030=" + encodeURIComponent(ua) +
     "&entry.1728493919=" + encodeURIComponent(lang) +
     "&entry.63282796=" + encodeURIComponent(screenRes);
 
   window.location.href = url;
 }
 </script>
+
 
 
 </body>
